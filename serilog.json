@@ -1,0 +1,37 @@
+{
+  "Serilog": {
+    //"LevelSwitches": {
+    //  "$fileSwitch": "Verbose"
+    //},
+    //"Using": [
+    //  "Serilog.Sinks.Console",
+    //  "Serilog.Sinks.File"
+    //],
+    "MinimumLevel": "Debug",
+    //,
+    //"Enrich": [ "FromLogContext", "WithMachineName" ],
+    "WriteTo": [
+      //{
+      //  "Name": "Console",
+      //  "Args": {
+      //    "levelSwitch": "$consoleSwitch"
+      //  }
+      //},
+      {
+        "Name": "File",
+        "Args": {
+          "path": "Logs\\DiskUS_UAT_AUTH_.txt",
+          "outputTemplate": "{Timestamp:o} [{Level:u3}] {Message}{NewLine}{Exception}",
+          "rollingInterval": "Day" //,
+          //"retainedFileCountLimit": 7
+        }
+        //"Args": {
+        //  //"path": "E:\\Projects\\FraudDigitization\\FraudDigitization\\ERM_AuthService\\ERM_AuthService\\bin\\Debug\\net5.0\\Logs\\log.txt",
+        //  //"levelSwitch": "$fileSwitch",
+        //  "path": "%TEMP%/Logs/serilog-configuration-sample.txt",
+        //  "template": "[{@t:HH:mm:ss} {@l:u3} {Coalesce(SourceContext, '<none>')}] {@m}\n{@x}"
+        //}
+      }
+    ]
+  }
+}
